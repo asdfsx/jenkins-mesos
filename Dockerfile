@@ -11,8 +11,6 @@ RUN apt-get update && \
     mkdir -p /var/lib/jenkins/plugins && \
     (cd /var/lib/jenkins/plugins && wget --no-check-certificate http://updates.jenkins-ci.org/latest/mesos.hpi)
 
-ADD config.xml /var/lib/jenkins/config.xml
-
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv E56151BF && \
     DISTRO=$(lsb_release -is | tr '[:upper:]' '[:lower:]') && \
     CODENAME=$(lsb_release -cs) && \
